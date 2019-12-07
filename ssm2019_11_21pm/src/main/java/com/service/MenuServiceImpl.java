@@ -1,10 +1,12 @@
 package com.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import com.domain.Menu;
 import com.mapper.MenuMapper;
-import com.service.MenuService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class MenuServiceImpl implements MenuService{
 
@@ -39,6 +41,11 @@ public class MenuServiceImpl implements MenuService{
     @Override
     public int updateByPrimaryKey(Menu record) {
         return menuMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<Menu> selectUserMenu() {
+        return menuMapper.selectAll();
     }
 
 }

@@ -1,17 +1,8 @@
 package com.mapper;
 
 import com.domain.Menu;
+import tk.mybatis.mapper.common.Mapper;
 
-public interface MenuMapper {
-    int deleteByPrimaryKey(Integer id);
+public interface MenuMapper extends Mapper<Menu> {
 
-    int insert(Menu record);
-
-    int insertSelective(Menu record);
-
-    Menu selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Menu record);
-
-    int updateByPrimaryKey(Menu record);
 }

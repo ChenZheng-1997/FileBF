@@ -5,7 +5,7 @@
   Time: 14:02
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <title>SelectUserMeun</title>
@@ -32,14 +32,9 @@
 
         };
 
-        var zNodes = [
-            {id: 1, pId: 0, name: "父节点1 - 展aaaa开", open: true},
-            {id: 11, pId: 1, name: "父节点11 - 折叠"},
-            {id: 111, pId: 11, name: "叶子节点111", url: "http://www.163.com", "target": "mainiframe"},
-            {id: 13, pId: 1, name: "父节点13 - 没有子节点", isParent: true},
-            {id: 2, pId: 0, name: "父节点2 - 折叠"},
-            {id: 21, pId: 2, name: "父节点21 - 展开", open: true},
-        ];
+
+        //从后台调取menu的数据
+        var zNodes =${menus};
 
         $(document).ready(function () {
             $.fn.zTree.init($("#treeDemo"), setting, zNodes);

@@ -1,6 +1,9 @@
 package com.service;
 
 import com.domain.Menu;
+
+import java.util.List;
+
 public interface MenuService{
 
 
@@ -15,5 +18,11 @@ public interface MenuService{
     int updateByPrimaryKeySelective(Menu record);
 
     int updateByPrimaryKey(Menu record);
+
+    /**
+     * 查询用户的menu
+     * @return
+     */
+    List<Menu> selectUserMenu();
 
 }
