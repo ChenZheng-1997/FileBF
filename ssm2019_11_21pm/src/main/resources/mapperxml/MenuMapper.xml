@@ -15,7 +15,7 @@
         id, pid, `name`, url, target, `open`
     </sql>
     <select id="selectUserMenu" resultType="com.domain.Menu" parameterType="com.domain.User">
-        SELECT c.id,c.pid,c.name,c.url,c.target,c.open
+        SELECT DISTINCT(c.id),c.pid,c.name,c.url,c.target,c.open
         FROM usermidrole a
         INNER JOIN rolemidmenu b ON a.roleid = b.roleid
         INNER JOIN menu c ON b.menuid = c.id
