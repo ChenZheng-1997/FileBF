@@ -34,7 +34,7 @@
 
 
         //从后台调取menu的数据
-        var zNodes =${menus};
+        var zNodes =${menuJson};
 
         $(document).ready(function () {
             $.fn.zTree.init($("#treeDemo"), setting, zNodes);

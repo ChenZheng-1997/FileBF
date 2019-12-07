@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.domain.Menu;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.service.MenuService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,12 +23,18 @@ public class MainController {
      * @return
      */
     @RequestMapping("/selectusermeun")
-    public ModelAndView selectUserMeun() {
+    public ModelAndView selectUserMeun() throws JsonProcessingException {
 
         ModelAndView modelAndView = new ModelAndView();
         //根据登陆的用户匹配对应的目录
         List<Menu> menus = menuService.selectUserMenu();
-        modelAndView.addObject("menus",menus);
+
+        //将list集合转变为字符串让前端json可以读取
+        ObjectMapper objectMapper = new ObjectMapper();
+        String menuJson = objectMapper.writeValueAsString(menus);
+        menuJson = menuJson.replaceAll("pid", "pId");
+
+        modelAndView.addObject("menuJson", menuJson);
         modelAndView.setViewName("main");//设置转发路径
         return modelAndView;
     }

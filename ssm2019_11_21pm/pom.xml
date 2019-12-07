@@ -100,6 +100,13 @@
             <version>3.0.1</version>
         </dependency>
 
+        <!--jackson、json依赖-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
 
     </dependencies>
 
