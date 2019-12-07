@@ -1,6 +1,7 @@
 package com.service;
 
 import com.domain.Menu;
+import com.domain.User;
 
 import java.util.List;
 
@@ -23,6 +24,6 @@ public interface MenuService{
      * 查询用户的menu
      * @return
      */
-    List<Menu> selectUserMenu();
+    List<Menu> selectUserMenu(User user);
 
 }

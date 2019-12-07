@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.domain.Menu;
+import com.domain.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.service.MenuService;
@@ -26,12 +27,16 @@ public class MainController {
     public ModelAndView selectUserMeun() throws JsonProcessingException {
 
         ModelAndView modelAndView = new ModelAndView();
-        //根据登陆的用户匹配对应的目录
-        List<Menu> menus = menuService.selectUserMenu();
+        User user = new User();
+        user.setId(1);
+        // 模拟用户从登陆的session里面获取用户
+        //根据登陆的用户id匹配对应的目录
+        List<Menu> menus = menuService.selectUserMenu(user);
 
-        //将list集合转变为字符串让前端json可以读取
+        //将菜单list集合转变为字符串让前端json可以读取
         ObjectMapper objectMapper = new ObjectMapper();
         String menuJson = objectMapper.writeValueAsString(menus);
+        // 将json格式里面的pid变成pId，为了使前端树读取name保持一致
         menuJson = menuJson.replaceAll("pid", "pId");
 
         modelAndView.addObject("menuJson", menuJson);

@@ -1,6 +1,9 @@
 package com.domain;
 
+import javax.persistence.Id;
+
 public class Menu {
+    @Id
     private Integer id;
 
     private Integer pid;

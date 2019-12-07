@@ -1,6 +1,7 @@
 package com.service;
 
 import com.domain.Menu;
+import com.domain.User;
 import com.mapper.MenuMapper;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +9,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class MenuServiceImpl implements MenuService{
+public class MenuServiceImpl implements MenuService {
 
     @Resource
     private MenuMapper menuMapper;
@@ -44,8 +45,8 @@ public class MenuServiceImpl implements MenuService{
     }
 
     @Override
-    public List<Menu> selectUserMenu() {
-        return menuMapper.selectAll();
+    public List<Menu> selectUserMenu(User user) {
+        return menuMapper.selectUserMenu(user);
     }
 
 }

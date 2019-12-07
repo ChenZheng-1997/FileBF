@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.MenuMapper">
-  <resultMap id="BaseResultMap" type="com.domain.Menu">
-    <!--@mbg.generated-->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="pid" jdbcType="INTEGER" property="pid" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="url" jdbcType="VARCHAR" property="url" />
-    <result column="target" jdbcType="VARCHAR" property="target" />
-    <result column="open" jdbcType="VARCHAR" property="open" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    id, pid, `name`, url, target, `open`
-  </sql>
+    <resultMap id="BaseResultMap" type="com.domain.Menu">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="pid" jdbcType="INTEGER" property="pid"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="target" jdbcType="VARCHAR" property="target"/>
+        <result column="open" jdbcType="VARCHAR" property="open"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, pid, `name`, url, target, `open`
+    </sql>
+    <select id="selectUserMenu" resultType="com.domain.Menu" parameterType="com.domain.User">
+        SELECT c.id,c.pid,c.name,c.url,c.target,c.open
+        FROM usermidrole a
+        INNER JOIN rolemidmenu b ON a.roleid = b.roleid
+        INNER JOIN menu c ON b.menuid = c.id
+        WHERE a.userid =#{id}
+    </select>
+
 
 </mapper>
