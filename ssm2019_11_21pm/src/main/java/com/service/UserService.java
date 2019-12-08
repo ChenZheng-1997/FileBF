@@ -16,4 +16,6 @@ public interface UserService {
 
     int updateByPrimaryKey(User record);
 
+    public User selectOneUserNameAndUserPassword(User user);
+
 }

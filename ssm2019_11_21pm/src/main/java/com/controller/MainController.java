@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -24,15 +25,17 @@ public class MainController {
      * @return
      */
     @RequestMapping("/selectusermeun")
-    public ModelAndView selectUserMeun() throws JsonProcessingException {
+    public ModelAndView selectUserMeun(HttpSession session) throws JsonProcessingException {
 
         ModelAndView modelAndView = new ModelAndView();
-        User user = new User();
-        user.setId(1);
+
+        // 获取session里面的菜单
+        User user = (User) session.getAttribute("user");
+
         // 模拟用户从登陆的session里面获取用户
         //根据登陆的用户id匹配对应的目录
         List<Menu> menus = menuService.selectUserMenu(user);
-
+        System.out.println("menu// username:" + user.getUsername() + "\tpassword:" + user.getPassword() + "\tid:" + user.getId());
         //将菜单list集合转变为字符串让前端json可以读取
         ObjectMapper objectMapper = new ObjectMapper();
         String menuJson = objectMapper.writeValueAsString(menus);

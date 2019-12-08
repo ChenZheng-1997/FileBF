@@ -1,12 +1,13 @@
 package com.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import com.domain.User;
 import com.mapper.UserMapper;
-import com.service.UserService;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
@@ -39,6 +40,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public int updateByPrimaryKey(User record) {
         return userMapper.updateByPrimaryKey(record);
+    }
+
+    public User selectOneUserNameAndUserPassword(User user) {
+        return userMapper.selectOne(user);
     }
 
 }
