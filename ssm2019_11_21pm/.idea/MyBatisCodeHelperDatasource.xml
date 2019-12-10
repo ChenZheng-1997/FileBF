@@ -42,6 +42,16 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="sunlight:supplier">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Supplier" />
+                  <option name="moduleName" value="ssm2019_11_21pm" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="sunlight:user">
               <value>
                 <TableGenerateConfig>

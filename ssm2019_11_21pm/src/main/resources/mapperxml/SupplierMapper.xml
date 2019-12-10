@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.SupplierMapper">
+  <resultMap id="BaseResultMap" type="com.domain.Supplier">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="suppliername" jdbcType="VARCHAR" property="suppliername" />
+    <result column="supplierpeople" jdbcType="VARCHAR" property="supplierpeople" />
+    <result column="suppliermoney" jdbcType="INTEGER" property="suppliermoney" />
+    <result column="supplieraddress" jdbcType="VARCHAR" property="supplieraddress" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="sign" jdbcType="INTEGER" property="sign" />
+    <result column="explain" jdbcType="VARCHAR" property="explains" />
+  </resultMap>
+
+</mapper>

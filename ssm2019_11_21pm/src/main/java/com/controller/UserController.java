@@ -29,19 +29,17 @@ public class UserController {
      */
     @RequestMapping("/userlogin")
     public String userLogin(HttpSession session, User user, String imgcheck) {
-        String s = (String) session.getAttribute("imgcheck");//获取登陆时输入的验证码
+        String s = (String) session.getAttribute("userloginimgcheck");//获取登陆时输入的验证码
+        System.out.println(s);
         if (s.equals(imgcheck)) {//判断验证码输入时候正确
             user = userService.selectOneUserNameAndUserPassword(user);
             if (user != null) {
                 System.out.println("login//  username:" + user.getUsername() + "\tpassword:" + user.getPassword() + "\tid:" + user.getId());
                 session.setAttribute("user", user);
                 return "redirect:selectusermeun";
-            } else {
-                return "redirect:index.jsp";
             }
-        } else {
-            return "redirect:index.jsp";
         }
+        return "redirect:index.jsp";
     }
 
 
@@ -57,7 +55,7 @@ public class UserController {
         graphics.drawString(r + "", 6, 20);// 将验证码字符显示到图象中
 
         //把生成的验证码数字发送到session里，登陆的时候能获取提交
-        session.setAttribute("userloginimgcheck", r);
+        session.setAttribute("userloginimgcheck", r + "");
         graphics.dispose();
         ImageIO.write(bufferedImage, "jpg", response.getOutputStream());
     }
