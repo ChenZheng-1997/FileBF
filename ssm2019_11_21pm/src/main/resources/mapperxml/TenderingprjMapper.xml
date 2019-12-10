@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TenderingprjMapper">
+  <resultMap id="BaseResultMap" type="com.domain.Tenderingprj">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="tenderingtypeid" jdbcType="INTEGER" property="tenderingtypeid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="tenderingtitle" jdbcType="VARCHAR" property="tenderingtitle" />
+    <result column="tenderingbody" jdbcType="VARCHAR" property="tenderingbody" />
+    <result column="fbtime" jdbcType="VARCHAR" property="fbtime" />
+    <result column="jztime" jdbcType="TIMESTAMP" property="jztime" />
+    <result column="kbtime" jdbcType="TIMESTAMP" property="kbtime" />
+    <result column="supplierid" jdbcType="INTEGER" property="supplierid" />
+    <result column="sign" jdbcType="INTEGER" property="sign" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, tenderingtypeid, userid, tenderingtitle, tenderingbody, fbtime, jztime, kbtime, 
+    supplierid, sign
+  </sql>
+
+</mapper>

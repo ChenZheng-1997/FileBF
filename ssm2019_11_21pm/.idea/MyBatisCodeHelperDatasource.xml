@@ -52,6 +52,36 @@
                 </TableGenerateConfig>
               </value>
             </entry>
+            <entry key="sunlight:tenderingfile">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Tenderingfile" />
+                  <option name="moduleName" value="ssm2019_11_21pm" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="sunlight:tenderingprj">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Tenderingprj" />
+                  <option name="moduleName" value="ssm2019_11_21pm" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="sunlight:tenderingtype">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="Tenderingtype" />
+                  <option name="moduleName" value="ssm2019_11_21pm" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
             <entry key="sunlight:user">
               <value>
                 <TableGenerateConfig>

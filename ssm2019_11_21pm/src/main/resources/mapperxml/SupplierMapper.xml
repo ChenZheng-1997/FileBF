@@ -12,5 +12,5 @@
     <result column="sign" jdbcType="INTEGER" property="sign" />
     <result column="explain" jdbcType="VARCHAR" property="explains" />
   </resultMap>
-
+    
 </mapper>

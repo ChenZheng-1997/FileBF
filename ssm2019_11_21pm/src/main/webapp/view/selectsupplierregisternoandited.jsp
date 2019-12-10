@@ -21,6 +21,7 @@
             <td>法人</td>
             <td>注册资金</td>
             <td>状态</td>
+            <td>操作</td>
         </tr>
         <c:forEach items="${suppliers}" var="v" varStatus="vs">
             <%--varStatus表示序号--%>
@@ -30,6 +31,7 @@
                 <td>${v.supplierpeople}</td>
                 <td>${v.suppliermoney}</td>
                 <td>${v.sign}+注册待审核</td>
+                <td><a class="btn btn-primary" href="">审核</a></td>
             </tr>
         </c:forEach>
     </table>

@@ -1,10 +1,12 @@
 package com.domain;
 
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 public class Supplier {
 
     @Id
+    @GeneratedValue(generator = "JDBC")
     private Integer id;
 
     private String suppliername;
